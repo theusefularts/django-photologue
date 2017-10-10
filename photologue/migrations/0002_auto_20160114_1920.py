@@ -7,14 +7,13 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('photologue', '0004_auto_20140915_1259'),
+        ('photologue', '0001_initial'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='photo',
-            name='title',
-            field=models.CharField(unique=True, max_length=60, verbose_name='title'),
-            preserve_default=True,
+            model_name='gallery',
+            name='slug',
+            field=models.SlugField(help_text='A "slug" is a unique URL-friendly title for an object.', unique=True, verbose_name='slug'),
         ),
     ]

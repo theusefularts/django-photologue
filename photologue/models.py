@@ -524,6 +524,12 @@ class Photo(ImageModel):
                                blank=True)
     date_added = models.DateTimeField(_('date added'),
                                       default=now)
+    link_url = models.CharField(_('Link URL'), blank=True, max_length=512,
+        help_text=_('For use only in slideshow images: the URL of the page you want the image to link to, when clicked in a slideshow'))
+    ordering = models.IntegerField(_('Slideshow Order number'), default='', blank=True,
+        editable=True,
+        help_text=_('Images you want displayed in the slideshow should be given a number here. Lower numbers appear sooner, higher numbers later.'))
+
     is_public = models.BooleanField(_('is public'),
                                     default=True,
                                     help_text=_('Public photographs will be displayed in the default views.'))
